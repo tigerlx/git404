@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Not Found</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 100%;
+            position: relative;
+        }
+        .bg-in img{
+            position: absolute;
+        }
+        .bg1{
+            height: 425px;
+            width: 100%;
+        }
+        .bg2{
+            top: 30%;
+            left: 70%;
+        }
+        .bg3{
+            top: 20%;
+            left: 50%;
+        }
+        .bg4{
+            top: 60%;
+            left: 47%;
+        }
+        .bg5{
+            top: 33%;
+            left: 46%;
+        }
+        .cat-shadow{
+            top: 67%;
+            left: 42%;
+        }
+        .cat{
+            top: 20%;
+            left: 41%;
+        }
+        .text{
+            top: 16%;
+            left: 23%;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="bg"><img class="bg1" src="imgs/bg1.jpg" alt="loading..." /></div>
+    <div class="bg-in">
+        <img class="bg2" src="imgs/bg2.png" />
+        <img class="bg3" src="imgs/bg3.png" />
+        <img class="bg4" src="imgs/bg4-shadow.png" />
+        <img class="bg5" src="imgs/bg4.png" />
+        <img class="cat-shadow" src="imgs/cat-shadow.png" />
+        <img class="cat" src="imgs/cat.png" />
+        <img class="text" src="imgs/404.png" />
+    </div>
+
+</div>
+<script src="jquery-1.11.3.min.js"></script>
+<script>
+    var x1,y1,x2,y2,distanceX,distanceY,
+            bg2Left = $('.bg2').offset().left,
+            bg2Top = $('.bg2').offset().top,
+            bg3Left = $('.bg3').offset().left,
+            bg3Top = $('.bg3').offset().top,
+            bg4Left = $('.bg4').offset().left,
+            bg4Top = $('.bg4').offset().top,
+            bg5Left = $('.bg5').offset().left,
+            bg5Top = $('.bg5').offset().top,
+            catLeft = $('.cat').offset().left,
+            catTop = $('.cat').offset().top,
+            catShadowLeft = $('.cat-shadow').offset().left,
+            catShadowTop = $('.cat-shadow').offset().top,
+            textLeft = $('.text').offset().left,
+            textTop = $('.text').offset().top,
+            bWidth = $(document).width(),
+            bHeight = $(document).height();
+    document.onmousemove = function(e){
+        e = window.even || e;
+        x = e.pageX;
+        y = e.pageY;
+        bg2l = bg2Left-x/bWidth*30;
+        bg2t = bg2Top-y/bHeight*20;
+        bg3l = bg3Left-x/bWidth*20;
+        bg3t = bg3Top-y/bHeight*10;
+
+        bg4l = bg4Left+x/bWidth*20;
+        bg4t = bg4Top+y/bHeight*10;
+        bg5l = bg5Left+x/bWidth*20;
+        bg5t = bg5Top+y/bHeight*10;
+        catl = catLeft+x/bWidth*20;
+        catt = catTop+y/bHeight*10;
+        catSl = catShadowLeft+x/bWidth*20;
+        catSt = catShadowTop+y/bHeight*10;
+        textl = textLeft+x/bWidth*30;
+        textt = textTop+y/bHeight*20;
+        $('.bg2').css({left:bg2l,top:bg2t});
+        $('.bg3').css({left:bg3l,top:bg3t});
+        $('.bg4').css({left:bg4l,top:bg4t});
+        $('.bg5').css({left:bg5l,top:bg5t});
+        $('.cat').css({left:catl,top:catt});
+        $('.cat-shadow').css({left:catSl,top:catSt});
+        $('.text').css({left:textl,top:textt});
+     };
+</script>
+</body>
+</html>
+<!--https://github.com/tigerlx/github404-->
